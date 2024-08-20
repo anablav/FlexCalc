@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -18,6 +19,14 @@ public class Calculator {
     @Autowired
     @Qualifier("calcOperationsMap")
     private Map<Operation, IOperation> calcOperationsMap;
+
+    public Calculator() {
+        calcOperationsMap = new HashMap<>();
+        calcOperationsMap.put(Operation.ADD, new AddOperation());
+        calcOperationsMap.put(Operation.SUBTRACT, new SubtractOperation());
+        calcOperationsMap.put(Operation.MULTIPLY, new MultiplyOperation());
+        calcOperationsMap.put(Operation.DIVIDE, new DivideOperation());
+    }
 
     public Double calculate(Operation op, Double num1, Double num2) {
         try {
