@@ -1,2 +1,0 @@
-# FlexCalc
-Flexible Calculator Implementation
