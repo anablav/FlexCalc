@@ -1,6 +1,8 @@
 package com.example.flexcalc.model;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Optional;
 
 public enum Operation {
@@ -9,17 +11,24 @@ public enum Operation {
     MULTIPLY('*'),
     DIVIDE('/');
 
+    private static final Map<Character, Operation> BY_SYMBOL = new HashMap<>();
+
+    static {
+        for (Operation op : Operation.values()) {
+            BY_SYMBOL.put(op.symbol, op);
+        }
+    }
+
     private final char symbol;
     Operation(char symbol) {
         this.symbol = symbol;
     }
 
-    public Optional<Operation> getOperationBySymbol(char symbol) {
-        Operation[] operations = Operation.values();
-        return Arrays.stream(operations).filter(op -> op.symbol == symbol).findFirst();
-     }
+    public static Optional<Operation> getOperationBySymbol(char symbol) {
+        return Optional.ofNullable(BY_SYMBOL.get(symbol));
+    }
 
-    public String getSymbolByName(Operation op) {
+    public static String getSymbolByName(Operation op) {
         return String.valueOf(op.symbol);
     }
 }
