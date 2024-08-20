@@ -20,7 +20,7 @@ public class Calculator {
     @Qualifier("calcOperationsMap")
     private Map<Operation, IOperation> calcOperationsMap;
 
-    //This was added just to make the unit test work
+    //This was added just to make the unit test work.
     public Calculator() {
         calcOperationsMap = new HashMap<>();
         calcOperationsMap.put(Operation.ADD, new AddOperation());
