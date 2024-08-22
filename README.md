@@ -33,6 +33,8 @@ mvn test
 This solution uses Functional Interface IOperation and the lambda expression for the Functional Interface is passed 
 from the enum (Operation Enum). All the code for Solution2 is available in package "solution2".
 
+```shell
 REST APIs for testing is in Calculator2Controller.java
-Unit test : Calculator2Test
+Unit test : Calculator2Test.java
+```
 
