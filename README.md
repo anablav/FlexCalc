@@ -29,7 +29,7 @@ mvn spring-boot:run
 mvn test
 ```
 
-##Solution2:
+## Solution2:
 This solution uses Functional Interface IOperation and the lambda expression for the Functional Interface is passed 
 from the enum (Operation Enum). All the code for Solution2 is available in package "solution2".
 
